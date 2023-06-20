@@ -1,0 +1,67 @@
+﻿@model DataLayer.ViewModels.UpdateCustomerViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Customer </h1>
+
+<hr />
+<div class="row">
+  
+
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            @Html.HiddenFor(model => model.CustomerID)
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*    <div class="form-group">
+                <label asp-for="CustomerID" class="control-label"></label>
+                <input asp-for="CustomerID" class="form-control" />
+                <span asp-validation-for="CustomerID" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccountNumber" class="control-label"></label>
+                <input asp-for="BankAccountNumber" class="form-control" />
+                <span asp-validation-for="BankAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input  asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger "></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Edit" style="color:white" class="btn btn-warning" />
+
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a href="/Customer/Index" class="btn btn-secondary" style="width: 150px">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

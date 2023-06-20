@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 style="color:chocolate" class="display-4">Click Here</h1>
+    <a href="/Customer/Index"> <button id="seven">Customers</button></a>
+
+
+</div>
+
+<style>
+    body {
+        background-color: white;
+    }
+  
+    button {
+        background-color: transparent;
+        padding: 20px 40px;
+        border: 0;
+        font-size: 20px;
+        color: chocolate;
+        margin: 20px;
+    }
+
+   
+
+    #seven {
+      
+        position: relative;
+        border: 1px solid chocolate;
+        overflow: hidden;
+        transition: color 1s cubic-bezier(1, 0.04, 0.79, 0.39);
+    }
+
+        #seven:hover {
+            color: white;
+        }
+
+        #seven::after {
+            content: "";
+            position: absolute;
+            width: 10%;
+            height: 200%;
+            background: chocolate;
+            bottom: -50px;
+            left: -25px;
+            transition: width 1s ease;
+            transform: rotate(15deg);
+            z-index: -1;
+        }
+
+        #seven:hover::after {
+            width: 200%;
+        }
+</style>
